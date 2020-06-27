@@ -1,0 +1,212 @@
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  {% load  static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.0.1">
+  <title>Portfolio - Kaniz Fatema</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+  <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#563d7c">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .jumbotron{
+    background-image: url('https://i.ibb.co/cJKTf5S/education-2.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position:relatve;
+    /* padding-top: 250px; */
+    /* padding-bottom: 240px; */
+    max-width:100%;
+    height:65vh;
+
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    .btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+h2 {
+  font: bold 330%/100% "Lucida Grande";
+  position: relative;
+  color: #000000;
+  display: inline;
+}
+h3{
+  font: bold 200%/100% "Lucida Grande";
+  position: relative;
+  color: #000000;
+}
+#subh{
+  font: bold 150%/100% "Lucida Grande";
+  position: relative;
+  color: #808080;
+}
+.edu{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+
+  </style>
+  <!-- Custom styles for this template -->
+
+</head>
+<body>
+  <div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Are You sure you want to logout?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times</button>
+        </div>
+        <div class="modal-body">
+          <a role="button" class="btn btn-danger" href="{% url 'logout' %}">Yes</a>
+        <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <header> -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark " >
+      <a class="navbar-brand" href="{% url 'home' %}">Kaniz Fatema</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="{% url 'education' %}">Education</a>
+          <a class="nav-item nav-link" href="{% static '10055.pdf' %}">Resume</a>
+          <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+          {% if user.is_authenticated %}
+          <a class="nav-item nav-link" data-toggle="modal" data-target="#loginModal">Log out</a>
+          {% else %}
+          <a class="nav-item nav-link" href="{% url 'login' %}">Log in</a>
+          {% endif %}
+
+
+
+        </div>
+      </div>
+    </nav>
+
+
+
+  <main role="main">
+
+    <header class="jumbotron text-center">
+      <div class="container">
+
+      </div>
+    </header>
+    <div class="edu">
+
+    <hr class="m-0" />
+               <!-- Education-->
+               <section class="resume-section" id="education">
+                   <div class="resume-section-content">
+                       <h2 class="mb-5"><span></span>Education</h2>
+                       <br/>
+                       <br/>
+                       <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
+                           <div class="flex-grow-1">
+                             <div>
+                               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRb3UFhd1M4uEODEY11lzNq3uhAHsQ1qQE8ww&usqp=CAU" alt="logo"hight="200"width="100" />
+                               <h3 class="mb-0">Daffodil International University</h3>
+                              </div>
+
+
+                               <div class="subheading mb-3" id="subh">  Bachelor of Science</div>
+                               <div style="color: #808080;">Computer Science & Engineering</div>
+                               <p style="color: #808080;">GPA: 3.92</p>
+                           </div>
+
+                           <div class="flex-shrink-0"><span class="text-danger">January 2018 - Continuing</span></div>
+                       </div>
+                       <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
+                           <div class="flex-grow-1">
+                             <div>
+                               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR1t6TGkgYCLNmHEgjWt3X7hY-U7msElnYXNA&usqp=CAU" alt="logo"hight="200"width="100" />
+                               <h3 class="mb-0">Dr. Mahbubur Rahman Mollah College</h3>
+                              </div>
+                               <div class="subheading mb-3" id="subh">H.S.C</div>
+                               <div style="color: #808080;">Science</div>
+                               <p style="color: #808080;">GPA: 5.00 out of 5.00</p>
+                           </div>
+                           <div class="flex-shrink-0"><span class="text-danger">April 2014 - March 2016</span></div>
+                       </div>
+                       <div class="d-flex flex-column flex-md-row justify-content-between">
+                           <div class="flex-grow-1">
+                             <div>
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/A.K._High_School_Logo.png/230px-A.K._High_School_Logo.png" alt="logo"hight="200"width="100" />
+                               <h3 class="mb-0">A.K High School & College</h3>
+                              </div>
+                               <div class="subheading mb-3" id="subh">S.S.C</div>
+                               <div style="color: #808080;">Science</div>
+                               <p style="color: #808080;">GPA: 5.00 out of 5.00</p>
+                           </div>
+                           <div class="flex-shrink-0"><span class="text-danger">January 2007 - Decemver 2013</span></div>
+                       </div>
+                   </div>
+               </section>
+               <hr class="m-0" />
+               </div>
+
+
+  </main>
+
+  <footer class="text-muted " style="background-color:lightblue;">
+    <div class="container text-center">
+       <p>&copy; Kaniz Fatema {% now "Y" %}</p>
+    </div>
+  </footer>
+
+
+</body>
+</html>
