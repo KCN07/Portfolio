@@ -1,9 +1,10 @@
 from django.db import models
+import datetime
 
 
 class Blog(models.Model):
     title=models.CharField(max_length=255)
-    pub_date=models.DateTimeField()
+    pub_date=models.DateTimeField(default=datetime.datetime.now())
     body=models.TextField()
     image=models.ImageField(upload_to='images/')
 

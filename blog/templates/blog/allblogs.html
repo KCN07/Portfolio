@@ -52,10 +52,10 @@
       }
     }
     .btn {
-  background-color: DodgerBlue;
+
   border: none;
   color: white;
-  padding: 12px 16px;
+  padding: 5px 16px;
   font-size: 16px;
   cursor: pointer;
 }
@@ -113,7 +113,10 @@
       <h1 class="text-center pt-3">Welcome To Kaniz's Blog</h1>
       <br/>
       <br/>
-      <h2> Latest Posts </h2>
+      <h2> Latest Posts
+        {% if user.is_authenticated %}
+      <a  href="{% url 'addblog' %}"><button class='btn btn-success pull-right'>+ Add Blog</button></a> </h2>
+      {% endif %}
       <hr/>
       {% for blog in blogs.all %}
       <a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
