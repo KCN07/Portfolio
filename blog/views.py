@@ -34,3 +34,7 @@ def addblog(request):
     else:
         form = PostForm()
         return render(request,'blog/addblog.html',{'form':form})
+
+@login_required
+def editblog(request):
+    return render(request, 'blog/editblog.html', {'editblog':editblog})
