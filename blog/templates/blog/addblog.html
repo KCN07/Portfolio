@@ -1,1 +1,244 @@
+<!doctype html>
 
+<html lang="en">
+<head>
+  {% load  static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.0.1">
+  <title>Portfolio - Kaniz Fatema</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- <link href="{% static 'about/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"> -->
+
+
+
+  <!-- <link href="{% static 'about/lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'about/lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'about/lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'about/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'about/lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet"> -->
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+  <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#563d7c">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+      /* .jumbotron{
+     /* background-image: url('https://i.ibb.co/2cbqt8v/mimpor.jpg') ; */
+    /* background-repeat: no-repeat;
+    background-size: cover;
+     background-position: center center;
+    border-top: 10px solid #fff;
+    position:relatve;
+    padding-top: 150px;
+     max-width:100%;
+     height:80vh;
+    } */
+    .jumbotron {
+  padding: 60px 0;
+ color:#fff;
+  border-top: 10px solid #778492;
+}
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    .btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: RoyalBlue;
+}
+.title-s {
+  font-weight: 600;
+  color: #1e1e1e;
+  font-size: 1.1rem;
+}
+.title-box-2 {
+  margin-bottom: 3rem;
+}
+
+.title-left {
+  font-size: 2rem;
+  position: relative;
+}
+
+.box-shadow,
+.paralax-mf,
+.service-box,
+.work-box,
+.card-blog {
+  box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+}
+
+.box-shadow-a,
+.button:hover {
+  box-shadow: 0 0 0 4px #d7ebf8;
+}
+
+
+.line-mf {
+  width: 40px;
+  height: 5px;
+  background-color: #48abec;
+  margin: 0 auto;
+}
+
+.about-mf .box-shadow-full {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.about-mf .about-img {
+  margin-bottom: 2rem;
+}
+
+.about-mf .about-img img {
+  margin-left: 10px;
+}
+
+.skill-mf span {
+  color: #4e4e4e;
+}
+
+.skill-mf .progress {
+  background-color: #d7ebf8;
+  margin: .5rem 0 1.2rem 0;
+  border-radius: 0;
+  height: .7rem;
+}
+
+.skill-mf .progress .progress-bar {
+  height: .7rem;
+  background-color: #48abec;
+}
+#about{
+  background-color: #f5f5f5;
+
+}
+#box{
+  box-sizing: border-box;
+  width: 100%;
+  height: 650px;
+  padding: 30px;
+  padding-top: 5px;
+  border: 2px solid grey;
+  background-color: #fff;
+}
+
+
+
+
+  </style>
+  <!-- Custom styles for this template -->
+  <!-- <link href="{% static 'about/css/style.css' %}" rel="stylesheet"> -->
+
+
+</head>
+
+
+<body>
+  <div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Are You sure you want to logout?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times</button>
+        </div>
+        <div class="modal-body">
+          <a role="button" class="btn btn-danger" href="{% url 'logout' %}">Yes</a>
+        <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <header> -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark " >
+      <a class="navbar-brand" href="{% url 'home' %}">Kaniz Fatema</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="{% url 'education' %}">Education</a>
+          <a class="nav-item nav-link" href="{% static '10055.pdf' %}">Resume</a>
+          <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+          {% if user.is_authenticated %}
+          <a class="nav-item nav-link" data-toggle="modal" data-target="#loginModal">Log out</a>
+          {% else %}
+          <a class="nav-item nav-link" href="{% url 'login' %}">Log in</a>
+          {% endif %}
+
+
+
+        </div>
+      </div>
+    </nav>
+
+
+
+  <main role="main">
+
+    <header class="jumbotron bg-dark" >
+    <h1 align="center">Post a new blog</h1>
+  </header>
+
+  <div class="offset-sm-1 col-12 col-sm-10">
+  <div class="row">
+      <form method="post" data-ajax="false" enctype="multipart/form-data">
+
+      {% csrf_token %}
+      <table class="table table-striped table-hover">
+        {{ form.media }}
+        {{ form.as_table }}
+      </table>
+      <input type="submit" class="btn btn-primary" value='Post'>
+  </form>
+  </div>
+</div>
+
+
+  </main>
+
+  <footer class="text-muted " style="background-color:lightblue;">
+    <div class="container text-center">
+       <p>&copy; Kaniz Fatema {% now "Y" %}</p>
+    </div>
+  </footer>
+
+
+</body>
+</html>
